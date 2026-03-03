@@ -16,4 +16,5 @@ jobs:
       - name: Run daily push
         env:
           SERVERCHAN_KEY: ${{ secrets.SERVERCHAN_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python push_daily.py
