@@ -1,20 +1,17 @@
-name: AI 情报每日推送
-
+name: intelligence-push
 on:
-  schedule:
-    - cron: '0 1 * * *'
   workflow_dispatch:
-
-jobs:
-  push-daily-intelligence:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Run daily push
-        env:
-          SERVERCHAN_KEY: ${{ secrets.SERVERCHAN_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python push_daily.py
+  jobs:
+    push:
+        runs-on: ubuntu-latest
+            steps:
+                  - uses: actions/checkout@v4
+                        - uses: actions/setup-python@v5
+                                with:
+                                          python-version: '3.11'
+                                                - name: run
+                                                        env:
+                                                                  SERVERCHAN_KEY: ${{ secrets.SERVERCHAN_KEY }}
+                                                                            GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+                                                                                    run: python push_daily.py
+                                                                                    
